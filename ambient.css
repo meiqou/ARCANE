@@ -1,0 +1,73 @@
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: #07060f;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  inset: -12%;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+}
+
+body::before {
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 18% 22%, color-mix(in srgb, var(--pink-soft) 18%, transparent), transparent 34%),
+    radial-gradient(ellipse at 82% 30%, color-mix(in srgb, var(--blue) 17%, transparent), transparent 32%),
+    radial-gradient(ellipse at 53% 86%, color-mix(in srgb, var(--violet) 45%, transparent), transparent 42%),
+    linear-gradient(145deg, #090817 5%, #100c20 48%, #080914 100%);
+  background-size: 140% 140%;
+  animation: arcane-ambient-drift 32s ease-in-out infinite alternate;
+}
+
+body::after {
+  inset: 0;
+  opacity: .42;
+  background-image:
+    radial-gradient(circle, color-mix(in srgb, var(--pink-soft) 72%, transparent) 0 1px, transparent 1.8px),
+    radial-gradient(circle, color-mix(in srgb, var(--blue) 70%, transparent) 0 1px, transparent 2px),
+    linear-gradient(60deg, transparent 49.7%, rgba(185, 168, 255, .055) 50%, transparent 50.3%),
+    linear-gradient(-60deg, transparent 49.7%, rgba(185, 168, 255, .045) 50%, transparent 50.3%);
+  background-position: 0 0, 42px 64px, 0 0, 36px 62px;
+  background-size: 128px 144px, 170px 190px, 72px 124px, 72px 124px;
+  mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 82%, transparent);
+  animation: arcane-particle-drift 48s linear infinite;
+}
+
+body[data-city="piltover"]::before {
+  background:
+    radial-gradient(ellipse at 16% 18%, rgba(221, 177, 82, .2), transparent 34%),
+    radial-gradient(ellipse at 82% 30%, rgba(73, 139, 211, .2), transparent 32%),
+    radial-gradient(ellipse at 53% 86%, rgba(32, 63, 94, .42), transparent 42%),
+    linear-gradient(145deg, #090817 5%, #121522 48%, #080914 100%);
+}
+
+body[data-city="zaun"]::before {
+  background:
+    radial-gradient(ellipse at 18% 24%, rgba(137, 224, 63, .14), transparent 34%),
+    radial-gradient(ellipse at 82% 32%, rgba(154, 69, 219, .22), transparent 32%),
+    radial-gradient(ellipse at 52% 84%, rgba(65, 26, 83, .48), transparent 42%),
+    linear-gradient(145deg, #080910 5%, #120b1d 48%, #080914 100%);
+}
+
+@keyframes arcane-ambient-drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to { transform: translate3d(1.5%, 1%, 0) scale(1.06); }
+}
+
+@keyframes arcane-particle-drift {
+  from { background-position: 0 0, 42px 64px, 0 0, 36px 62px; }
+  to { background-position: 128px -144px, -128px 254px, 72px -124px, -36px 186px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}

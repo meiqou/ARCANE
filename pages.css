@@ -1,0 +1,65 @@
+.page-main [hidden] { display: none !important; }
+.page-main { width: min(1120px, calc(100% - 40px)); min-height: calc(100vh - 190px); margin: 0 auto; padding: clamp(42px, 8vh, 90px) 0; }
+.page-heading { max-width: 760px; margin-bottom: 32px; }
+.page-heading .eyebrow { margin: 0 0 10px; }
+.page-heading .h1 { margin-bottom: 16px; }
+.page-heading p { max-width: 62ch; color: #d6d0f0; }
+.page-panel { padding: clamp(22px, 4vw, 40px); border: 1px solid var(--line); background: rgba(13, 10, 28, .94); }
+.entry-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.entry-card { display: grid; align-content: start; gap: 16px; min-width: 0; padding: clamp(22px, 4vw, 34px); border: 1px solid var(--line); background: linear-gradient(145deg, rgba(20, 17, 36, .96), rgba(7, 6, 15, .94)); }
+.entry-card h2, .entry-card h3 { margin: 0; }
+.entry-card p { margin: 0; color: #d6d0f0; }
+.entry-card form { display: grid; gap: 14px; }
+.entry-card label { display: grid; gap: 6px; color: var(--lav); font-size: .8rem; letter-spacing: .08em; }
+.entry-card input { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid var(--line); background: rgba(7, 6, 15, .88); color: var(--bone); font: inherit; }
+.entry-card .btn { justify-content: center; }
+.page-notice { min-height: 1.5em; margin: 0; color: var(--pink-soft); font-size: .85rem; }
+.city-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 24px; }
+.city-option { display: flex; min-height: 280px; flex-direction: column; justify-content: flex-end; align-items: flex-start; gap: 12px; padding: 26px; border: 1px solid var(--line); color: var(--bone); text-align: left; cursor: pointer; background-position: center; background-size: cover; }
+.city-option strong { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1; }
+.city-option span { max-width: 38ch; padding: 8px 10px; background: rgba(7, 6, 15, .76); }
+.city-option.piltover { background-image: linear-gradient(0deg, rgba(7,6,15,.8), transparent 80%), url("images/piltover.jpg"); }
+.city-option.zaun { background-image: linear-gradient(0deg, rgba(7,6,15,.8), transparent 80%), url("images/zaun.jpg"); }
+.dashboard-page .dashboard { margin-top: 0; }
+.dashboard-shortcuts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.top .mark { text-decoration: none; }
+.landmark-hero { position: relative; min-height: 330px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; padding: clamp(24px, 5vw, 48px); border: 1px solid var(--line); background: linear-gradient(90deg, rgba(7, 6, 15, .92), rgba(7, 6, 15, .35)), url("images/piltover.jpg") center 48% / cover; }
+.landmark-hero.zaun { background-image: linear-gradient(90deg, rgba(7, 6, 15, .94), rgba(7, 6, 15, .38)), url("images/zaun.jpg"); }
+.landmark-hero.landmark-hero-custom { background-image: linear-gradient(90deg, rgba(7, 6, 15, .94), rgba(7, 6, 15, .38)), var(--landmark-hero-image); }
+.landmark-hero .eyebrow, .landmark-hero h1, .landmark-hero p { margin: 0; }
+.landmark-hero h1 { max-width: 850px; }
+.landmark-hero p { max-width: 64ch; color: #e2dcff; }
+.academy-article { padding-top: 76px; }
+.academy-article .sec-head { max-width: 850px; }
+.academy-article-lead { color: #e2dcff !important; font-size: clamp(1.05rem, 2vw, 1.28rem); line-height: 1.7; }
+.academy-article-body { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.academy-article-body section, .academy-article-body blockquote { min-width: 0; margin: 0; padding: clamp(20px, 3vw, 30px); border: 1px solid var(--line); background: rgba(13, 10, 28, .9); }
+.academy-article-body h3 { margin: 0 0 12px; color: var(--pink-soft); font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+.academy-article-body p { margin: 0 0 12px; color: #d6d0f0; }
+.academy-article-body p:last-child { margin-bottom: 0; }
+.academy-article-body blockquote { display: flex; flex-direction: column; justify-content: center; border-left: 3px solid var(--pink-soft); }
+.academy-article-body blockquote p { color: var(--bone); font-size: clamp(1.2rem, 2.4vw, 1.8rem); font-family: var(--font-display); }
+.academy-article-body cite { color: var(--mute); font-size: .75rem; font-style: normal; letter-spacing: .16em; text-transform: uppercase; }
+.academy-source { margin: 18px 0 0; color: var(--mute); font-size: .82rem; }
+.academy-source a { color: var(--lav); }
+.landmark-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.arcade-spark { position: fixed; z-index: 20; width: 6px; height: 6px; margin: -3px; border-radius: 50%; pointer-events: none; }
+body[data-landmark-page="council-hall"] .character-card[data-character="heimerdinger"] .character-portrait img { --portrait-visible: 79%; left: 60%; height: 132%; }
+.character-card:hover[data-character="heimerdinger"] .character-portrait img, .character-card:focus-within[data-character="heimerdinger"] .character-portrait img { --portrait-visible: 70.3%; height: 150%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="cassandra"] .character-portrait img { --portrait-visible: 70.667%; height: 140%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="cassandra"]:hover .character-portrait img,
+body[data-landmark-page="council-hall"] .character-card[data-character="cassandra"]:focus-within .character-portrait img { --portrait-visible: 70.3%; height: 150%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="allira"] .character-portrait img { --portrait-visible: 70.667%; height: 140%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="allira"]:hover .character-portrait img,
+body[data-landmark-page="council-hall"] .character-card[data-character="allira"]:focus-within .character-portrait img { --portrait-visible: 70.3%; height: 150%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="torman"] .character-portrait img { --portrait-visible: 70.667%; height: 140%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="torman"]:hover .character-portrait img,
+body[data-landmark-page="council-hall"] .character-card[data-character="torman"]:focus-within .character-portrait img { --portrait-visible: 70.3%; height: 150%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="irius"] .character-portrait img { top: 5%; --portrait-visible: 50.667%; height: 200%; }
+body[data-landmark-page="council-hall"] .character-card[data-character="irius"]:hover .character-portrait img,
+body[data-landmark-page="council-hall"] .character-card[data-character="irius"]:focus-within .character-portrait img { --portrait-visible: 50.667%; height: 205%; }
+@media (max-width: 760px) {
+  .entry-grid, .city-options { grid-template-columns: minmax(0, 1fr); }
+  .city-option { min-height: 220px; }
+  .academy-article-body { grid-template-columns: minmax(0, 1fr); }
+}
